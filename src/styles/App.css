@@ -1,0 +1,28 @@
+.ES {
+  background-color: #EEA47F;
+  min-height: 100vh;
+}
+
+.ES-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: royalblue;
+  height: 200px;
+  color: black;
+  font-family: 'Mali', cursive;
+}
+
+.ES-body {
+  padding: 20px;
+}
+
+.sign-up-register-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.sign-up-register {
+  width: 30%;
+}
