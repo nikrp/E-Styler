@@ -1,6 +1,7 @@
 .ES {
   background-color: #EEA47F;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 .ES-header {
@@ -15,14 +16,32 @@
 
 .ES-body {
   padding: 20px;
+  width: 100%;
 }
 
 .sign-up-register-container {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .sign-up-register {
-  width: 30%;
+  width: var(--auth-width);
+}
+
+.creating-app-passwords-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.creating-app-passwords {
+  width: 90%;
+  background-color: royalblue;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.information-text {
+  font-size: var(--normal-text);
 }

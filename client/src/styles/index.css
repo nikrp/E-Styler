@@ -1,3 +1,8 @@
+:root {
+  --normal-text: 18px;
+  --auth-width: 30%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+@media (max-width: 1000px) {
+  :root {
+    --normal-text: 24px;
+    --auth-width: 80%;
+  }
 }

@@ -1,11 +1,20 @@
 // Packages
-import { Button, Form, Icon } from 'semantic-ui-react';
-import { useState } from 'react';
+import { Form, Icon, Message } from 'semantic-ui-react';
+import { useState, useEffect } from 'react';
 
 // Styles
 
 // Component
 export default function SignIn({ signInSegState }) {
+    const [fontSize, setFontSize] = useState('');
+
+    useEffect(() => {
+        const element = document.querySelector('.fill-fields-msg');
+        const computedStyles = window.getComputedStyle(element);
+        const fontSize = computedStyles.getPropertyValue('--normal-text');
+        setFontSize(fontSize);
+    }, []);
+
     const [formData, setFormData] = useState({
         identityName: '',
         password: '',
@@ -35,7 +44,8 @@ export default function SignIn({ signInSegState }) {
 
     return (
         <div className="ES-signin">
-            <Form size='large'>
+            <Message className='fill-fields-msg' color='purple' content={<span style={{ 'fontWeight':'bold', 'fontSize': fontSize }}>* Denotes a required field. We won't let you go!</span>} icon={<Icon name='info' size='mini'/>}/>
+            <Form size='large' inverted>
                 <Form.Input 
                     type='text' 
                     placeholder='BillyBobJoe OR billy@bob.joecom' 
@@ -43,7 +53,7 @@ export default function SignIn({ signInSegState }) {
                     name='identityName' 
                     value={formData.identityName} 
                     onChange={handleInputChange}
-                    style={{ 'width':'500px' }}
+                    style={{ 'width':'100%' }}
                 />
                 <Form.Input 
                     type={showPswd ? 'text' : 'password'} 
