@@ -28,7 +28,7 @@ function App() {
           <div className='sign-up-register'>
             <Grid style={{ 'border':'2px whitesmoke solid', 'border-radius':'10px', 'display':'flex', 'justify-content':'center', 'background-color':'black' }}>
               <Grid.Row horizontal attached='top'>
-                <Button.Group style={{ 'marginRight':'40%' }}>
+                <Button.Group style={{ 'marginRight':'31%' }}>
                   <Button fluid color={signIn ? 'blue' : 'white'} onClick={() => setSignIn(true)} style={{ 'fontSize':'18px' }}>Sign In</Button>
                   <Button.Or/>
                   <Button fluid color={signIn ? 'white' : 'blue'} onClick={() => setSignIn(false)} style={{ 'fontSize':'18px'}}>Register</Button>
@@ -77,6 +77,8 @@ function App() {
                     </List.Content>
                 </List.Item>
               </List>
+              <br/>
+              We encrypt any app password so they will be very secure.
             </p>
           </div>
         </div>

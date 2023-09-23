@@ -38,6 +38,10 @@ export default function SignIn({ signInSegState }) {
         setShowPswd(false);
     }
 
+    const handleSubmit = () => {
+
+    }
+
     if (signInSegState === false) {
         clearForm();
     }
