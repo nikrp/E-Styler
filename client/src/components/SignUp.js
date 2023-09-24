@@ -7,7 +7,7 @@ import axios from 'axios'
 
 // Backend
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:9000/users', // Set the base URL
+    baseURL: 'http://192.168.1.51:9000/users', // Set the base URL
     headers: {
       'Content-Type': 'application/json'
     }
@@ -98,7 +98,7 @@ export default function SignUp({ singInSegState }) {
                 }
             });
 
-            const resStatus = response.data.validationStatus;
+            const resStatus = response.data;
             console.log(resStatus);
         } catch (e) {
             console.log(e);
@@ -123,8 +123,8 @@ export default function SignUp({ singInSegState }) {
     return (
         <div className='ES-register'>
             <Message className='fill-fields-msg' color='purple' content={<span style={{ 'fontWeight':'bold', 'fontSize': fontSize }}>* Denotes a required field. We won't let you go!</span>} icon={<Icon name='info' size='mini'/>}/>
-            <Form size='large' inverted>
-                <Form.Group widths='equal' style={{ 'width':'103%' }}>
+            <Form size='large' inverted style={{ 'width': formHasError ? '80%' : '90%', 'marginLeft': formHasError ? '10%' : '5%' }}>
+                <Form.Group widths='equal'>
                     <Form.Input type='text' placeholder='Billy' label='First Name *' name='fName' value={formData.fName.value} onChange={handleInputChange} error={formData.fName.error ? { content: formData.fName.error, pointing: 'above' } : null}/>
                     <Form.Input type='text' placeholder='Smith' label='Last Name' name='lName' value={formData.lName.value} onChange={handleInputChange} error={formData.lName.error ? formData.lName.error : null}/>
                 </Form.Group>
