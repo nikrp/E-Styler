@@ -7,6 +7,7 @@ import { Switch } from '@headlessui/react'
 // Components
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import Switcher from './Switcher';
 
 // Styles
 import './styles/App.css';
@@ -23,11 +24,16 @@ function App() {
   const [signIn, setSignIn] = useState(true);
   const [agreed, setAgreed] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setAgreed(false);
+  }
+
   return (
     <div className='ES'>
-      <div className='ES-header' style={{ 'marginBottom':'10px' }}>
+      <div className='ES-header' style={{ 'marginBottom':'10px', 'position':'sticky', 'top':'0' }}>
         <Header style={{ 'fontFamily':'Mali', 'fontSize':'35px', 'color':'#EEA47F' }}>
-          <center><Icon name='tint' color='blue' inverted/></center>
+          <center><Switcher /></center>
           Welcome to E-Styler
           <Header.Subheader style={{ 'color':'yellow', 'font-size':'1.25rem', 'text-decoration':'underline' }}>The perfect place to style your emails.</Header.Subheader>
         </Header>
@@ -101,7 +107,7 @@ function App() {
 
         <div className='contact-us-container'>
           <div className='contact-us'>
-          <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 br:10px">
+          <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 br:10px rounded-lg">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -119,7 +125,7 @@ function App() {
           We will help you with anything you need.
         </p>
       </div>
-      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -218,7 +224,7 @@ function App() {
                 name="message"
                 id="message"
                 rows={4}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-grey-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={''}
               />
             </div>
@@ -264,6 +270,11 @@ function App() {
     </div>
           </div>
           </div>
+          <div className="bg-gray-100 dark:bg-black">
+            <h1 className="text-black dark:text-white">
+                GeeksforGeeks
+            </h1>
+        </div>
         </div>
       </div>
   );
