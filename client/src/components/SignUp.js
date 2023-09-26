@@ -81,7 +81,7 @@ export default function SignUp({ singInSegState }) {
         }
 
         if (newFormData.appPassword.value.length === 0) {
-            newFormData.appPassword.error = 'An App Password is required! If you don\'t have one, follow the steps in the section below!'
+            newFormData.appPassword.error = 'An App Password is required!'
         } else {
             newFormData.appPassword.error = ''
         }
