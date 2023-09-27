@@ -123,7 +123,7 @@ export default function SignUp({ singInSegState }) {
     return (
         <div className='ES-register'>
             <Message className='fill-fields-msg' color='purple' content={<span style={{ 'fontWeight':'bold', 'fontSize': fontSize }}>* Denotes a required field. We won't let you go!</span>} icon={<Icon name='info' size='mini'/>}/>
-            <Form size='large' inverted style={{ 'width': formHasError ? '80%' : '90%', 'marginLeft': formHasError ? '10%' : '5%' }}>
+            <Form size='large' style={{ 'width': formHasError ? '80%' : '90%', 'marginLeft': formHasError ? '10%' : '5%' }}>
                 <Form.Group widths='equal'>
                     <Form.Input type='text' placeholder='Billy' label='First Name *' name='fName' value={formData.fName.value} onChange={handleInputChange} error={formData.fName.error ? { content: formData.fName.error, pointing: 'above' } : null}/>
                     <Form.Input type='text' placeholder='Smith' label='Last Name' name='lName' value={formData.lName.value} onChange={handleInputChange} error={formData.lName.error ? formData.lName.error : null}/>

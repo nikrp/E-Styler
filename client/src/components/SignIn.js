@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Styles
+import '../dist/output.css';
 
 // Backend
 const axiosInstance = axios.create({
@@ -92,7 +93,7 @@ export default function SignIn({ signInSegState }) {
     return (
         <div className="ES-signin">
             <Message className='fill-fields-msg' color='purple' content={<span style={{ 'fontWeight':'bold', 'fontSize': fontSize }}>* Denotes a required field. We won't let you go!</span>} icon={<Icon name='info' size='mini'/>}/>
-            <Form size='large' inverted>
+            <Form size='large'>
                 <Form.Input 
                     type='text' 
                     placeholder='BillyBobJoe OR billy@bob.joecom' 
