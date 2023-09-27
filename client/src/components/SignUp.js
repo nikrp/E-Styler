@@ -98,8 +98,33 @@ export default function SignUp({ singInSegState }) {
                 }
             });
 
-            const resStatus = response.data;
-            console.log(resStatus);
+            const resStatus = response.data.status;
+            if (resStatus !== 'clear') {
+                if (resStatus === 'dupeEmail') {
+                    setFormData({
+                        ...formData,
+                        email: {...formData.email, error: 'There is already an account registered with this email!'}
+                    });
+                } else {
+                    setFormData({
+                        ...formData,
+                        email: {...formData.email, error: ''}
+                    });
+                }
+                if (resStatus === 'dupeUsername') {
+                    setFormData({
+                        ...formData,
+                        username: {...formData.username, error: 'This username is taken!'}
+                    });
+                } else {
+                    setFormData({
+                        ...formData,
+                        username: {...formData.username, error: ''}
+                    });
+                }
+            } else {
+                // Set Rendered Content on Home Page to User Dashboard here. Collect all user data first.
+            }
         } catch (e) {
             console.log(e);
         }

@@ -20,13 +20,11 @@ function App() {
   };
 
   return (
-    <div className='min-h-screen min-w-screen bg-slate-400'>
-        <div id="sticky-element" class="sticky w-11 h-12 ml-8 top-3 right-0 justify-end z-10 ring-2 p-1 mr-4 mt-4 ring-white hover:cursor-pointer bg-sky-500 rounded-full">
+    <div className='min-h-screen min-w-screen bg-slate-400 m-0'>
+      <div className="mb-5 bg-royalblue p-6 sm:p-12">
+        <div id="sticky-element" class="sticky w-11 h-12 ml-8 top-3 right-0 justify-end z-10 p-1 pt-1.5 pl-1 mr-4 mt-4 hover:cursor-pointer bg-sky-500 rounded-full">
           <Switcher />
         </div>
-
-
-      <div className="mb-5 bg-royalblue p-6 sm:p-12">
         <p className="font-Mali text-3xl sm:text-6xl text-orange-500 z-10 font-bold mb-3">
           Welcome to E-Styler<br/>
           <span className="text-yellow-500 text-xl sm:text-2xl underline">
@@ -35,9 +33,7 @@ function App() {
         </p>
       </div>
 
-      <div className='ES-body'>
-        <div className='sign-up-register-container mx-auto'>
-          <div className='sign-up-register'>
+          <div className='sign-up-register m-0'>
             <Grid className='border-2 rounded-10 flex justify-center'>
               <Grid.Row className='sm:mr-31 mx-auto'>
                 <Button.Group>
@@ -65,7 +61,6 @@ function App() {
               </Grid.Row>
             </Grid>
           </div>
-        </div>
 
         <Divider horizontal section color='blue'>
           <Header as='h1' className='font-Mali'>
@@ -74,7 +69,6 @@ function App() {
           </Header>
         </Divider>
 
-        <div className='creating-app-passwords-container w-full sm:w-5/6 justify-center'>
           <div className='creating-app-password bg-royalblue rounded-xl'>
             <p className='information-text bg-royalblue rounded-10 text-whitesmoke p-3 sm:p-10'>
               An app password is a 16-digit passcode that gives a less secure app or device permission to access your Google Account. App passwords are automatically generated, not specified by the user. This automatically generated password makes it harder for an attacker to guess, so it's more secure.<br /><br />
@@ -105,7 +99,6 @@ function App() {
               We encrypt any app password so they will be very secure.
             </p>
           </div>
-        </div>
 
         <Divider horizontal section color='blue'>
           <Header as='h1' className='font-Mali'>
@@ -114,7 +107,6 @@ function App() {
           </Header>
         </Divider>
       </div>
-    </div>
   );
 }
 
