@@ -101,7 +101,7 @@ export default function SignUp({ singInSegState }) {
             const resStatus = response.data.status;
             if (resStatus !== 'clear') {
                 if (resStatus === 'dupeEmail') {
-                    setFormData({
+                    await setFormData({
                         ...formData,
                         email: {...formData.email, error: 'There is already an account registered with this email!'}
                     });
@@ -123,7 +123,6 @@ export default function SignUp({ singInSegState }) {
                     });
                 }
             } else {
-                // Set Rendered Content on Home Page to User Dashboard here. Collect all user data first.
             }
         } catch (e) {
             console.log(e);
